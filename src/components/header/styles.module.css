@@ -1,0 +1,27 @@
+.root {
+  background-color: rgba(254, 254, 254, 0.1);
+  width: 100vw;
+  display: flex;
+  height: 64px;
+  padding-right: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.title {
+  flex-grow: 1;
+  color: white;
+  line-height: 64px;
+  font-size: 26px;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.mainMenuLink {
+  line-height: 64px;
+  color: white;
+  margin: 0 16px;
+  text-decoration: none;
+}

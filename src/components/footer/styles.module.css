@@ -1,0 +1,22 @@
+.root {
+  background-color: rgba(100, 100, 100, 0.3);
+  width: 100vw;
+  display: flex;
+  height: 32px;
+  padding-right: 18px;
+  z-index: 100;
+}
+
+.title {
+  flex-grow: 1;
+  line-height: 32px;
+  font-size: 17px;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.mainMenuLink {
+  line-height: 32px;
+  margin: 0 16px;
+  text-decoration: none;
+}
