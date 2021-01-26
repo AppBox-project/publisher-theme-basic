@@ -3,11 +3,11 @@ module.exports = {
     title: `Vic van Cooten`,
     menus: {
       main: [
-        { label: "Blog", url: "/blog" },
-        { label: "About us", url: "/about" },
-        { label: "Contact", url: "/contact" },
+        { label: "Blog", to: "/blog" },
+        { label: "About us", to: "/about" },
+        { label: "Contact", to: "/contact" },
       ],
-      footer: [{ label: "AppBox", url: "https://box.vtvc.nl" }],
+      footer: [{ label: "AppBox", to: "https://box.vtvc.nl" }],
     },
     footer: { active: true, text: "© 2021 Vic van Cooten" },
   },

@@ -15,7 +15,7 @@ export default function Footer() {
             menus {
               footer {
                 label
-                url
+                to
               }
             }
           }
@@ -30,9 +30,9 @@ export default function Footer() {
       <div>
         {data.site.siteMetadata.menus.footer.map(menuItem => (
           <a
-            href={menuItem.url}
+            href={menuItem.to}
             className={styles.mainMenuLink}
-            key={menuItem.url}
+            key={menuItem.to}
           >
             {menuItem.label}
           </a>

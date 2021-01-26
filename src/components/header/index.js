@@ -12,7 +12,7 @@ export default function Header() {
             menus {
               main {
                 label
-                url
+                to
               }
             }
           }
@@ -29,9 +29,9 @@ export default function Header() {
       <div>
         {data.site.siteMetadata.menus.main.map(menuItem => (
           <Link
-            to={menuItem.url}
+            to={menuItem.to}
             className={styles.mainMenuLink}
-            key={menuItem.url}
+            key={menuItem.to}
           >
             {menuItem.label}
           </Link>
