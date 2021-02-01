@@ -8,7 +8,6 @@ import { filter } from "lodash"
 
 export default function Page({ data }) {
   const page = data.markdownRemark
-
   return (
     <Layout>
       <Img
@@ -38,30 +37,35 @@ function DisplayElement({
   allData,
 }) {
   if (type === "text") {
-    return value
+    if (value.match(/^DisplayData/)) {
+      const propertiesList = value.split(":")[1].split("|")
+      const properties = {}
+      propertiesList.map(
+        prop => (properties[prop.split("=")[0]] = prop.split("=")[1])
+      )
+      return (
+        <DisplayData
+          {...properties}
+          data={filter(
+            allData,
+            o => o.node.frontmatter.model === properties.model
+          )}
+        />
+      )
+    } else {
+      return value
+    }
   } else {
     if (tagName) {
-      if (tagName === "displaydata") {
-        return (
-          <DisplayData
-            {...properties}
-            data={filter(
-              allData,
-              o => o.node.frontmatter.model === properties.model
-            )}
-          />
-        )
-      } else {
-        // Render regular HTML tag (recursive)
-        const Element = tagName
-        return (
-          <Element {...properties}>
-            {children.map(child => (
-              <DisplayElement {...child} />
-            ))}
-          </Element>
-        )
-      }
+      // Render regular HTML tag (recursive)
+      const Element = tagName
+      return (
+        <Element {...properties}>
+          {children.map(child => (
+            <DisplayElement {...child} allData={allData} />
+          ))}
+        </Element>
+      )
     } else {
       // Unknown.
       return

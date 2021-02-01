@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 
-export default function DisplayData({ model, title, mode, data }) {
+export default function DisplayData({ title, mode, data }) {
   return (
     <>
       {title && <h4>{title}</h4>}
