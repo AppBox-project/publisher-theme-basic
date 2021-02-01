@@ -1,4 +1,4 @@
-import siteMetadata from "./siteData.json"
+const siteMetadata = require("./siteData.json")
 module.exports = {
   siteMetadata,
   plugins: [
